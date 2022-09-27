@@ -10,13 +10,15 @@ def add_time(start, duration, day_of_week=None):
   }
 
   start_parts = start.lower().split()
-  
+
   start_time = start_parts[0]
 
   start_time_parts = start_time.split(":")
-  
+
   start_hour = int(start_time_parts[0])
+
   start_minutes = int(start_time_parts[1])
+
   start_period = start_parts[1]
 
   if day_of_week != None:
@@ -27,6 +29,7 @@ def add_time(start, duration, day_of_week=None):
   duration_parts = duration.split(":")
 
   duration_hours = int(duration_parts[0])
+
   duration_minutes = int(duration_parts[1])
 
   num_of_days = int(duration_hours / 24)
@@ -37,9 +40,11 @@ def add_time(start, duration, day_of_week=None):
     start_hour = start_hour
 
   end_minutes = start_minutes + duration_minutes
+
   end_hour = start_hour + duration_hours
+
   end_day = start_day + num_of_days
-  
+
   if end_minutes >= 60:
     end_hour += 1
     end_minutes = end_minutes % 60
